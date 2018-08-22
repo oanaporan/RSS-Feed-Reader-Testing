@@ -18,24 +18,23 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
         // Loops through each feed
-        //  in the allFeeds object and ensures it has a URL defined
-        //   and that the URL is not empty.
-        allFeeds.forEach(function(feed) {
-            it('each feed has a URL defined', function() {
-                expect(feed).toContain(URL);
-                expect(feed.url).not.toBeUndefined();
-            })(allFeeds[i]);
-        })
-       
-
-
-        /* Loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
+        // in the allFeeds object and ensures it has a URL defined
+        // and that the URL is not empty.
+        it('each feed has a URL defined', function() {
+         for (feed in allFeeds) {
+                expect(allFeeds[feed].url).toBeDefined();
+                expect(allFeeds[feed].url.length).not.toBe(0);
+         }
+        });
+        // Loops through each feed
+        // in the allFeeds object and ensures it has a name defined
+        // and that the name is not empty.
         it('each feed has a name defined', function() {
-            expect()
-        })
+            for (feed in allFeeds) {
+                expect(allFeeds[feed].name).toBeDefined();
+                expect(allFeeds[feed].name.length).not.toBe(0);
+         }
+           });
     });
 
 
@@ -85,4 +84,4 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-}());
+
