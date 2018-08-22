@@ -42,8 +42,8 @@ $(function() {
     describe('The menu', function(){
         // ensures the menu element is
         // hidden by default.
-        it('nemu hidden', function(){
-
+        it('nemu hidden by default', function(){
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         })
         // Ensures the menu changes visibility when the menu icon is clicked. 
         // Has two expectations: 
