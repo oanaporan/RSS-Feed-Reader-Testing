@@ -38,22 +38,24 @@ $(function() {
     });
 
 
-    /* The menu suite */
-    describe('The menu', function(){
+    //The menu suite
+    describe('The menu', function() {
         // ensures the menu element is
         // hidden by default.
-        it('nemu hidden by default', function(){
+        it('nemu hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         })
         // Ensures the menu changes visibility when the menu icon is clicked. 
-        // Has two expectations: 
-        // - does the menu display when clicked 
-        // - does it hide when clicked again.
-        it('menu hidden', function(){
-
+        it('menu hidden', function() {
+            // menu display when clicked 
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+            // hide menu when clicked again.
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
         })
         
-        it('menu icon appears', function(){
+        it('menu icon appears', function() {
 
         })
 
