@@ -46,7 +46,7 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         })
         // Ensures the menu changes visibility when the menu icon is clicked. 
-        it('menu hidden', function() {
+        it('menu visability', function() {
             // menu display when clicked 
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(true);
@@ -55,10 +55,6 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(false);
         })
         
-        it('menu icon appears', function() {
-
-        })
-
     })
 
     //Initial Entries Suite //
