@@ -68,31 +68,32 @@ $(function() {
             it('At least a single entry element in feed container', function(){
                 expect($('.feed .entry').length).toBeGreaterThan(0);  
              });
-             
-      
-        
-
-
 
         })
+    //New Feed Selection Suite
+        describe('New Feed Selection', function() {
+            let firstFeed, secondFeed;
+            // Ensures that the new feed is loaded 
+            beforeEach(function(done) {
+                loadFeed(1, function() {
+                    // Loads first entry
+                    firstFeed = $('.feed').html();
+                    // Loads second entry
+                    loadFeed(2, function() {
+                        done();
+                    });
+                });        
+             });
+            
+            afterEach(function() {
+                loadFeed(0);
+            });
+            // Checks if two entries are not equal
+            it('Checks if two feeds are different', function() {
+                // Checks second feed
+                secondFeed = $('.feed').html();
+                expect(firstFeed).not.toEqual(secondFeed);
+            }); 
+        });
 
-
-    })
-
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
-
-    //New Feed Selection
-    describe('New Feed Selection', function(){
-
-    })
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
-
+    });
