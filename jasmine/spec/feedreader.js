@@ -44,7 +44,7 @@ $(function() {
         it('Menu hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         })
-        // Ensures the menu changes visibility when the menu icon is clicked. 
+        // Ensures the menu changes visibility when icon is clicked. 
         it('Menu visabillity on click', function() {
             // menu display when clicked 
             $('.menu-icon-link').trigger('click');
