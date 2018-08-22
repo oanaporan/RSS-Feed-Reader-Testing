@@ -23,7 +23,8 @@ $(function() {
         allFeeds.forEach(function(feed) {
             it('each feed has a URL defined', function() {
                 expect(feed).toContain(URL);
-            })
+                expect(feed.url).not.toBeUndefined();
+            })(allFeeds[i]);
         })
        
 
