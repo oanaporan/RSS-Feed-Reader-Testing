@@ -48,10 +48,10 @@ $(function() {
         it('Menu visabillity on click', function() {
             // menu display when clicked 
             $('.menu-icon-link').trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             // hide menu when clicked again.
             $('.menu-icon-link').trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBe(false);
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         })
         
     })
